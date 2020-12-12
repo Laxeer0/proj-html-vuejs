@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iAcademy</title>
+
+    <!--CDN BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!--CDN VUEJS-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
+    <!--CDN FONTAWESOME-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.0.10/css/all.css" />
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="root">
+        <div class="view">
+            <div class="img-slider" v-bind:style="{ 'background-image': 'url(' + sliderImages[currentImg] +')' }">
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar">
+                    <div class="container">
+                        <a class="navbar-brand" href="#">
+                            <img src="img/logo-light.png" alt="" height="40px">
+                        </a>
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav navbar-center">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Courses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Instructors</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Events</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Pages</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Elements</a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fal fa-search"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"> <i class="fal fa-shopping-bag"></i>
+                                        <span class="badge badge-notify" style="font-size:10px;">3</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"> <i class="fal fa-bars"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- Navbar -->
+
+                <div class="title-center text-center">
+
+                    <div class="container">
+                        <h1>Contemporary Ideas</h1>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus omnis, animi, laudantium numquam at molestias dolor aut id, inventore minima delectus voluptatum ex quo provident eos! Dignissimos, inventore molestias! Fugiat?</p>
+                        <button class="btn btn-info btn-lg btn-register mt-5">Register Now</button>
+                    </div>
+                </div>
+                <div class="dots-div">
+                    <div class="container">
+                        <ul class="dots">
+                            <li v-for="n in sliderImages.length ">
+                                <a @click="currentImg=n-1">
+                                    <i v-if="currentImg == n-1" class="far fa-dot-circle fa-sm"></i>
+                                    <i v-else="currentImg == n-1" class="fa fa-circle fa-sm"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <main>
+            <section class="mt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-centered">
+                            <img src="img/h5-custom-icon-1.png">
+                            <b>Languages</b>
+
+                        </div>
+                        <div class="col col-centered">
+                            <img src="img/h5-custom-icon-2.png">
+                            <b>Software</b>
+
+                        </div>
+                        <div class="col col-centered">
+                            <img src="img/h5-custom-icon-3.png">
+                            <b>Business</b>
+
+                        </div>
+                        <div class="col col-centered">
+                            <img src="img/h5-custom-icon-4.png">
+                            <b>Chemistry</b>
+
+                        </div>
+                        <div class="col col-centered">
+                            <img src="img/h5-custom-icon-5.png">
+                            <b>Science</b>
+
+                        </div>
+                        <div class="col col-centered">
+                            <img src="img/h5-custom-icon-6.png">
+                            <b>DIY&Craft</b>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="mt-5">
+                <div class="container">
+                    <h1>The Trusted Name <br>for In-Home Tutoring.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, iste incidunt dolore nihil aperiam optio, doloremque dignissimos repellat modi tenetur omnis quo totam. Commodi ut est a, doloremque assumenda provident!</p>
+                    <a class="learn-more" href="">Learn More</a>
+                    <div class="d-flex justify-content-center img-tutoring">
+                        <img src="img/h5-img-1.jpg">
+                    </div>
+                </div>
+            </section>
+            <section class="mt-5">
+                <div class="container">
+                    <!--Grid row-->
+                    <div class="row">
+
+                        <div class="col-4  mx-auto">
+                            <img src="img/h1-img-8.jpg" class="img-fluid z-depth-1-half" alt="">
+
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-4 mx-auto">
+                            <h1>Empowering Children to Reach Their Potential</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex est maxime dolore quidem ab quo, cupiditate soluta quod rerum perspiciatis eaque perferendis consectetur aliquid commodi quos nulla assumenda. Fuga, tempore!</p>
+                            <div class="row">
+                                <div class="col text-center">
+
+                                    <h1 class="text-info">
+                                        168
+                                    </h1>
+                                    <h4 class="text-info">User Stories</h6>
+                                </div>
+                                <div class="col text-center">
+                                    <h1 class="text-info">
+                                        347
+                                    </h1>
+                                    <h4 class="text-info">Events</h6>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+                </div>
+            </section>
+            <section class="testimonials mt-5 py-3">
+                <div class="container">
+                    <div id="testimonials" class="carousel slide" data-bs-ride="carousel">
+
+
+                        <div class="carousel-inner">
+                            <div v-for="testimonial in sliderTestimonials" class="carousel-item" :class="{'active':(testimonial == sliderTestimonials[currentTestimonial])}">
+                                <div class="carousel-caption">
+                                    <img :src="testimonial.avatar">
+                                    <p class="mt-5">{{testimonial.description}} </p>
+                                    <h4>{{testimonial.name}}</h4>
+                                    <h6 class="mt-3">{{testimonial.job}}</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ol class="dots-testimonial carousel-indicators">
+                            <li v-for="n in sliderTestimonials.length " data-bs-target="#testimonials" v-bind:data-bs-slide-to="n-1">
+                                <i class="fa fa-circle fa-sm "></i>
+                            </li>
+                        </ol>
+
+                    </div>
+                </div>
+
+
+            </section>
+            <section class="mt-5 ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-8 m-auto">
+                            <div class="tab">
+                                <button class="tablinks active" onclick="openTab(event, '1')">What We Do</button>
+                                <button class="tablinks" onclick="openTab(event, '2')">Degree Programme</button>
+                                <button class="tablinks" onclick="openTab(event, '3')">Career Archivements</button>
+                                <button class="tablinks" onclick="openTab(event, '4')">Personal Managment</button>
+                                <button class="tablinks" onclick="openTab(event, '5')">Steps To Success</button>
+                                <button class="tablinks" onclick="openTab(event, '6')">Knowledge Transfer</button>
+                            </div>
+                            <div id="1" class="tabcontent active">
+                                <div class="m-4 tabcontent-text">
+                                    <h3>Learning Possibilities</h3>
+                                    <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, nam. Voluptatibus velit beatae numquam dolorum! Accusantium perferendis unde possimus et beatae dolorum qui iste placeat laboriosam. Ipsam odit reprehenderit
+                                        facere!
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p><i class="fal fa-check "></i>&nbsp;We enrich lives through learning.</p>
+                                            <p><i class="fal fa-check "></i>&nbsp;Maximizing potential through individual attention.</p>
+                                            <p><i class="fal fa-check"></i>&nbsp;The trusted name for specialized training</p>
+                                            <p><i class="fal fa-check"></i>&nbsp;People teach. People learn. This is where they connect,</p>
+                                        </div>
+                                        <div class="col-4 d-flex align-items-end justify-content-end">
+                                            <img src="img/h12-tabs-icon-1.png" height="100px">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="2" class="tabcontent">
+                                <div class="m-4 tabcontent-text">
+                                    <h3>Learning Possibilities</h3>
+                                    <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, nam. Voluptatibus velit beatae numquam dolorum! Accusantium perferendis unde possimus et beatae dolorum qui iste placeat laboriosam. Ipsam odit reprehenderit
+                                        facere!
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p><i class="fal fa-check "></i>&nbsp;We enrich lives through learning.</p>
+                                            <p><i class="fal fa-check "></i>&nbsp;Maximizing potential through individual attention.</p>
+                                            <p><i class="fal fa-check"></i>&nbsp;The trusted name for specialized training</p>
+                                            <p><i class="fal fa-check"></i>&nbsp;People teach. People learn. This is where they connect,</p>
+                                        </div>
+                                        <div class="col-4 d-flex align-items-end justify-content-end">
+                                            <img src="img/h12-tabs-icon-2.png" height="100px">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="3" class="tabcontent">
+                                <div class="m-4 tabcontent-text">
+                                    <h3>Learning Possibilities</h3>
+                                    <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, nam. Voluptatibus velit beatae numquam dolorum! Accusantium perferendis unde possimus et beatae dolorum qui iste placeat laboriosam. Ipsam odit reprehenderit
+                                        facere!
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p><i class="fal fa-check "></i>&nbsp;We enrich lives through learning.</p>
+                                            <p><i class="fal fa-check "></i>&nbsp;Maximizing potential through individual attention.</p>
+                                            <p><i class="fal fa-check"></i>&nbsp;The trusted name for specialized training</p>
+                                            <p><i class="fal fa-check"></i>&nbsp;People teach. People learn. This is where they connect,</p>
+                                        </div>
+                                        <div class="col-4 d-flex align-items-end justify-content-end">
+                                            <img src="img/h12-tabs-icon-3.png" height="100px">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="4" class="tabcontent">
+                                <div class="m-4 tabcontent-text">
+                                    <h3>Learning Possibilities</h3>
+                                    <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, nam. Voluptatibus velit beatae numquam dolorum! Accusantium perferendis unde possimus et beatae dolorum qui iste placeat laboriosam. Ipsam odit reprehenderit
+                                        facere!
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p><i class="fal fa-check "></i>&nbsp;We enrich lives through learning.</p>
+                                            <p><i class="fal fa-check "></i>&nbsp;Maximizing potential through individual attention.</p>
+                                            <p><i class="fal fa-check"></i>&nbsp;The trusted name for specialized training</p>
+                                            <p><i class="fal fa-check"></i>&nbsp;People teach. People learn. This is where they connect,</p>
+                                        </div>
+                                        <div class="col-4 d-flex align-items-end justify-content-end">
+                                            <img src="img/h12-tabs-icon-4.png" height="100px">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="5" class="tabcontent">
+                                <div class="m-4 tabcontent-text">
+                                    <h3>Learning Possibilities</h3>
+                                    <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, nam. Voluptatibus velit beatae numquam dolorum! Accusantium perferendis unde possimus et beatae dolorum qui iste placeat laboriosam. Ipsam odit reprehenderit
+                                        facere!
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p><i class="fal fa-check "></i>&nbsp;We enrich lives through learning.</p>
+                                            <p><i class="fal fa-check "></i>&nbsp;Maximizing potential through individual attention.</p>
+                                            <p><i class="fal fa-check"></i>&nbsp;The trusted name for specialized training</p>
+                                            <p><i class="fal fa-check"></i>&nbsp;People teach. People learn. This is where they connect,</p>
+                                        </div>
+                                        <div class="col-4 d-flex align-items-end justify-content-end">
+                                            <img src="img/h12-tabs-icon-5.png" height="100px">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="6" class="tabcontent">
+                                <div class="m-4 tabcontent-text">
+                                    <h3>Learning Possibilities</h3>
+                                    <p class="mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, nam. Voluptatibus velit beatae numquam dolorum! Accusantium perferendis unde possimus et beatae dolorum qui iste placeat laboriosam. Ipsam odit reprehenderit
+                                        facere!
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p><i class="fal fa-check "></i>&nbsp;We enrich lives through learning.</p>
+                                            <p><i class="fal fa-check "></i>&nbsp;Maximizing potential through individual attention.</p>
+                                            <p><i class="fal fa-check"></i>&nbsp;The trusted name for specialized training</p>
+                                            <p><i class="fal fa-check"></i>&nbsp;People teach. People learn. This is where they connect,</p>
+                                        </div>
+                                        <div class="col-4 d-flex align-items-end justify-content-end">
+                                            <img src="img/h12-tabs-icon-6.png" height="100px">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mt-5 py-5" style="background-image: url('img/page-background-img.png'); background-size:cover; background-repeat: no-repeat; background-position: center;">
+                <div id="coursesCarousel" class="carousel-courses slide" data-ride="carousel">
+                    <div class="carousel-inner row w-100" role="listbox">
+                        <div class="carousel-courses-item  active">
+                            <div class="row justify-content-center">
+                                <div class="card col-lg-3 col-md-3">
+                                    <img class="card-img-top " src="img/course-5-f-img.jpg " alt="Card image cap ">
+                                    <div class="card-body ">
+
+                                        <div class="row">
+                                            <div class="col-9">
+                                                <h5 class="card-title ">Android Developer</h5>
+                                            </div>
+                                            <div class="col-3">
+                                                <span class="price-free">Free</span>
+                                            </div>
+                                        </div>
+                                        <p class="card-author ">David Sanders</p>
+                                        <p class="card-text ">Lorem ipsum dolor sit amet, te eros consulatu pro, quem labores petentium no sea, atqui posidonium interpretaris.</p>
+                                        <p class="card-author "><i class="fa fa-user "></i> 1 &nbsp; <i class="fa fa-tag "></i> Programmer </p>
+                                    </div>
+                                </div>
+                                <div class="card col-lg-3 col-md-3 mx-2">
+                                    <img class="card-img-top " src="img/course-6-f-img.jpg " alt="Card image cap ">
+                                    <div class="card-body ">
+                                        <div class="row">
+                                            <div class="col-9">
+                                                <h5 class="card-title ">Android Developer</h5>
+                                            </div>
+                                            <div class="col-3">
+                                                <span class="price-free">Free</span>
+                                            </div>
+                                        </div>
+                                        <p class="card-author ">David Sanders</p>
+                                        <p class="card-text ">Lorem ipsum dolor sit amet, te eros consulatu pro, quem labores petentium no sea, atqui posidonium interpretaris.</p>
+                                        <p class="card-author "><i class="fa fa-user "></i> 1 &nbsp; <i class="fa fa-tag "></i> Programmer </p>
+                                    </div>
+                                </div>
+                                <div class="card col-lg-3 col-md-3">
+                                    <img class="card-img-top " src="img/course-12-f-img.jpg " alt="Card image cap ">
+                                    <div class="card-body ">
+
+                                        <div class="row">
+                                            <div class="col-9">
+                                                <h5 class="card-title ">Android Developer</h5>
+                                            </div>
+                                            <div class="col-3">
+                                                <span class="price-pay">$20</span>
+                                            </div>
+                                        </div>
+                                        <p class="card-author ">David Sanders</p>
+                                        <p class="card-text ">Lorem ipsum dolor sit amet, te eros consulatu pro, quem labores petentium no sea, atqui posidonium interpretaris.</p>
+                                        <p class="card-author "><i class="fa fa-user "></i> 1 &nbsp; <i class="fa fa-tag "></i> Programmer </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ol class="dots-testimonial carousel-indicators ">
+                        <li v-for="n in sliderTestimonials.length " data-bs-target="#demo " v-bind:data-bs-slide-to="n-1 ">
+                            <i class="fa fa-circle fa-sm "></i>
+                        </li>
+                    </ol>
+
+                </div>
+                <div class="container mt-5">
+                    <div class="table-responsive d-flex justify-content-center">
+                        <table class="table bg-white table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th class="col-3 text-end align-bottom">
+                                        <h3>Save up to 40% by paying weekly</h3>
+                                    </th>
+                                    <td class="text-center py-5 bg-lightblue">
+                                        <img src="img/h5-custom-icon-7.png">
+                                        <h6>Standars</h6>
+                                        <h6>$12</h6>
+                                    </td>
+                                    <td class="text-center bg-lightblue">
+                                        <img src="img/h5-custom-icon-8.png">
+                                        <h6>Professional</h6>
+                                        <h6>$59</h6>
+                                    </td>
+                                    <td class="text-center bg-lightblue">
+                                        <img src="img/h5-custom-icon-9.png">
+                                        <h6>Advanced</h6>
+                                        <h6>$88</h6>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center table-detail py-3">Number of Courses</th>
+                                    <td>
+                                        2
+                                    </td>
+                                    <td>
+                                        4
+                                    </td>
+                                    <td>
+                                        6
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center table-detail py-3">Time</th>
+                                    <td>
+                                        15 Days
+                                    </td>
+                                    <td>
+                                        30 Days
+                                    </td>
+                                    <td>
+                                        30 Days
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center table-detail py-3">Web Designing</th>
+                                    <td>
+                                        <i class="fal fa-check check"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fal fa-check check"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fal fa-check check"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center table-detail py-3">Human-Centered Design</th>
+                                    <td>
+                                        <i class="fal fa-check check"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fal fa-check check"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fal fa-check check"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center table-detail py-3">Basic Marketing</th>
+                                    <td>
+                                        <i class="fal fa-times"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fal fa-check check"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fal fa-check check"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center table-detail py-3">Python for Everybody</th>
+                                    <td>
+                                        <i class="fal fa-times"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fal fa-check check"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fal fa-check check"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center table-detail py-3">Android Developer</th>
+                                    <td>
+                                        <i class="fal fa-times"></i>
+
+                                    </td>
+                                    <td>
+                                        <i class="fal fa-times"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fal fa-check check"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center table-detail py-3">Business English</th>
+                                    <td>
+                                        <i class="fal fa-times"></i>
+
+                                    </td>
+                                    <td>
+                                        <i class="fal fa-times"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fal fa-check check"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td class="bg-lightblue">
+                                        <button class="btn btn-outline-secondary bg-white btn-plans text-uppercase">Get it now</button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-info btn-plans text-uppercase ">Get it now</button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline-secondary bg-white btn-plans text-uppercase">Get it now</button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section class="my-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="img/h5-client-5.png"></div>
+                        <div class="col"><img src="img/h5-client-1.png"></div>
+                        <div class="col"><img src="img/h5-client-2.png"></div>
+                        <div class="col"><img src="img/h5-client-1.png"></div>
+                    </div>
+                </div>
+            </section>
+
+
+
+        </main>
+        <footer class="bg-dark py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <img src="img/logo-light.png" alt="" height="30px">
+                        <p class="mt-5 m-0">Providing Life Changing</p>
+                        <p class="m-0">Experiences Through</p>
+                        <p class="m-0">Education. Class That Fit Your</p>
+                        <p class="mb-5">Busy Life. Closer to Home</p>
+                        <p><i class="fal fa-phone-plus fa-flip-horizontal"></i>&nbsp; 1-677-124-44227</p>
+                        <p><i class="fal fa-clock fa-flip-horizontal"></i>Mon - Sat 8.00 - 18:00</p>
+                    </div>
+                    <div class="col">
+                        <h4 class="mb-5">Popular Courses</h4>
+                        <h6>Business English</h6>
+                        <p class="mt-0">Preston Marshall</p>
+                        <h6>Social Computing</h6>
+                        <p class="mt-0">David Sanders</p>
+                        <h6>Learn Spanish</h6>
+                        <p class="mt-0">Jennie King</p>
+                    </div>
+                    <div class="col">
+                        <h4 class="mb-5">Support</h4>
+                        <ul class="text-white support-ul">
+                            <li><a href="">User dashboard</a></li>
+                            <li>
+                                <a href="">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="">Course Offer</a>
+                            </li>
+                            <li>
+                                <a href="">Events</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h4 class="mb-5">Flexible Learning</h4>
+                        <img src="img/footer-img-1.png" alt="" width="100%">
+                    </div>
+                </div>
+                <hr class="my-5 bg-white">
+                <div class="row justify-content-between">
+                    <div class="col-6">
+                        <p>Copyright 2017 &copy;Mikado Themes</p>
+                    </div>
+                    <div class="col-4 text-end">
+                        <div class="d-flex justify-content-between">
+
+                            <p>CALL +44 300 303 0266</p>
+                            <p>FOLLOW US</p>
+                            <p><i class="fab fa-twitter"></i></p>
+                            <p><i class="fab fa-instagram"></i></p>
+                            <p><i class="fab fa-facebook"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js " integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW " crossorigin="anonymous "></script>
+
+    <script src="js/main.js "></script>
+</body>
+
+</html>
